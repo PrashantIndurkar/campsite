@@ -30,5 +30,8 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "nodemon": "^2.0.22"
+  },
+  "volta": {
+    "node": "20.20.2"
   }
 }

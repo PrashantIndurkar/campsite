@@ -207,15 +207,6 @@ catalogs:
     '@testing-library/react':
       specifier: ^15.0.7
       version: 15.0.7
-    '@tiptap-pro/extension-details':
-      specifier: ^2.10.11
-      version: 2.10.11
-    '@tiptap-pro/extension-details-content':
-      specifier: ^2.10.11
-      version: 2.10.11
-    '@tiptap-pro/extension-details-summary':
-      specifier: ^2.10.11
-      version: 2.10.11
     '@tiptap/core':
       specifier: ^2.6.4
       version: 2.6.4
@@ -1701,14 +1692,14 @@ importers:
         specifier: workspace:*
         version: link:../regex
       '@tiptap-pro/extension-details':
-        specifier: 'catalog:'
-        version: 2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))(@tiptap/pm@2.6.4)
+        specifier: workspace:*
+        version: link:../tiptap-mock-details
       '@tiptap-pro/extension-details-content':
-        specifier: 'catalog:'
-        version: 2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))(@tiptap/pm@2.6.4)
+        specifier: workspace:*
+        version: link:../tiptap-mock-details-content
       '@tiptap-pro/extension-details-summary':
-        specifier: 'catalog:'
-        version: 2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))
+        specifier: workspace:*
+        version: link:../tiptap-mock-details-summary
       '@tiptap/core':
         specifier: 'catalog:'
         version: 2.6.4(@tiptap/pm@2.6.4)
@@ -1884,6 +1875,24 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.4.3
+
+  packages/tiptap-mock-details:
+    dependencies:
+      '@tiptap/core':
+        specifier: 'catalog:'
+        version: 2.6.4(@tiptap/pm@2.6.4)
+
+  packages/tiptap-mock-details-content:
+    dependencies:
+      '@tiptap/core':
+        specifier: 'catalog:'
+        version: 2.6.4(@tiptap/pm@2.6.4)
+
+  packages/tiptap-mock-details-summary:
+    dependencies:
+      '@tiptap/core':
+        specifier: 'catalog:'
+        version: 2.6.4(@tiptap/pm@2.6.4)
 
   packages/tsconfig: {}
 
@@ -5982,23 +5991,6 @@ packages:
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
-
-  '@tiptap-pro/extension-details-content@2.10.11':
-    resolution: {integrity: sha512-tXNdI/N0E++WI0KbmRwB262r0M/eqYSu/WLu2ZCyxB2lchCWdpn4mkntaGQDSJ7wo6MPE7jIBof8c9HWokxSKw==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0
-      '@tiptap/pm': ^2.0.0
-
-  '@tiptap-pro/extension-details-summary@2.10.11':
-    resolution: {integrity: sha512-2vrpWGfq87qo50MPy1BsXZEU4c0gQWcnrnmSomrYe/83gvxlqo4TmdFxH0J54xsMoY8CBwK1PrfYODr1egulUQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0
-
-  '@tiptap-pro/extension-details@2.10.11':
-    resolution: {integrity: sha512-Uh0EEPDzyDqK1w4Z0H8KkqKIWsBaGSVRsVeczf0stAtGenVxLb/xJBoKEhwLfBvbfdq70RJpcOx7oFWeXezvhA==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0
-      '@tiptap/pm': ^2.0.0
 
   '@tiptap/core@2.6.4':
     resolution: {integrity: sha512-lv+JyBI+5C6C7BMLYg2bloB00HvAZkcvgO3CzmFia28Vtt1P9yhS44elvBemhUf7IP7Hu12FUzDWY+2GQqiqkw==}
@@ -18521,7 +18513,7 @@ snapshots:
     dependencies:
       '@sanity/client': 6.22.0(debug@4.3.6)
       '@sanity/icons': 3.4.0(react@18.2.0)
-      '@sanity/preview-url-secret': 1.6.21(@sanity/client@6.22.0(debug@4.3.6))
+      '@sanity/preview-url-secret': 1.6.21(@sanity/client@6.22.0)
       '@sanity/ui': 2.8.9(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@sanity/uuid': 3.0.2
       '@types/lodash.isequal': 4.5.8
@@ -18553,7 +18545,7 @@ snapshots:
     optionalDependencies:
       react: 18.2.0
 
-  '@sanity/preview-url-secret@1.6.21(@sanity/client@6.22.0(debug@4.3.6))':
+  '@sanity/preview-url-secret@1.6.21(@sanity/client@6.22.0)':
     dependencies:
       '@sanity/client': 6.22.0(debug@4.3.6)
       '@sanity/uuid': 3.0.2
@@ -18667,7 +18659,7 @@ snapshots:
 
   '@sanity/visual-editing@2.1.10(@sanity/client@6.22.0)(next@14.2.5(@babel/core@7.24.6)(@opentelemetry/api@1.9.0)(@playwright/test@1.43.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(svelte@4.2.19)':
     dependencies:
-      '@sanity/preview-url-secret': 1.6.21(@sanity/client@6.22.0(debug@4.3.6))
+      '@sanity/preview-url-secret': 1.6.21(@sanity/client@6.22.0)
       '@vercel/stega': 0.1.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -19845,20 +19837,6 @@ snapshots:
   '@testing-library/user-event@14.5.2(@testing-library/dom@9.3.4)':
     dependencies:
       '@testing-library/dom': 9.3.4
-
-  '@tiptap-pro/extension-details-content@2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))(@tiptap/pm@2.6.4)':
-    dependencies:
-      '@tiptap/core': 2.6.4(@tiptap/pm@2.6.4)
-      '@tiptap/pm': 2.6.4
-
-  '@tiptap-pro/extension-details-summary@2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))':
-    dependencies:
-      '@tiptap/core': 2.6.4(@tiptap/pm@2.6.4)
-
-  '@tiptap-pro/extension-details@2.10.11(@tiptap/core@2.6.4(@tiptap/pm@2.6.4))(@tiptap/pm@2.6.4)':
-    dependencies:
-      '@tiptap/core': 2.6.4(@tiptap/pm@2.6.4)
-      '@tiptap/pm': 2.6.4
 
   '@tiptap/core@2.6.4(@tiptap/pm@2.6.4)':
     dependencies:

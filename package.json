@@ -31,5 +31,8 @@
     "patchedDependencies": {
       "@radix-ui/react-popper": "patches/@radix-ui__react-popper.patch"
     }
+  },
+  "volta": {
+    "node": "20.20.2"
   }
 }

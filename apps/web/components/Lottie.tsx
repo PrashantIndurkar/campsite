@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import LottieLight from 'react-lottie-player/dist/LottiePlayerLight'
 
 interface Props {
   url: string
@@ -15,9 +14,16 @@ export function Lottie(props: Props) {
   const [animationItem, setAnimationItem] = useState<any>(null)
   const [loaded, setLoaded] = useState(false)
   const [_frame, setFrame] = useState(0)
+  const [LottiePlayer, setLottiePlayer] = useState<any>(null)
 
   useEffect(() => {
-    if (loaded) {
+    import('react-lottie-player/dist/LottiePlayerLight').then((mod) => {
+      setLottiePlayer(() => mod.default)
+    })
+  }, [])
+
+  useEffect(() => {
+    if (loaded && ref.current) {
       const player = ref.current as any
 
       setAnimationItem(player)
@@ -36,8 +42,12 @@ export function Lottie(props: Props) {
     onFrame?.(percentage)
   }
 
+  if (!LottiePlayer) {
+    return <div className={className} />
+  }
+
   return (
-    <LottieLight
+    <LottiePlayer
       ref={ref}
       path={url}
       play

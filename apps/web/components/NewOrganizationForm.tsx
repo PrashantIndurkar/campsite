@@ -66,7 +66,7 @@ const newOrgSchema = z
   .object({
     name: z.string().nonempty({ message: 'Name is required' }).min(2, { message: 'Name is too short' }),
     slug: z.string().nonempty({ message: 'Slug is required' }).min(2, { message: 'Slug is too short' }),
-    avatar_path: z.string().optional(),
+    avatar_path: z.string().nullish(),
     role: z
       .string()
       .refine((value) => value !== NO_SELECTION, { message: 'Must select your role' })

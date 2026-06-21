@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@campsite/regex": "workspace:*",
-    "@tiptap-pro/extension-details": "catalog:",
-    "@tiptap-pro/extension-details-content": "catalog:",
-    "@tiptap-pro/extension-details-summary": "catalog:",
+    "@tiptap-pro/extension-details": "workspace:*",
+    "@tiptap-pro/extension-details-content": "workspace:*",
+    "@tiptap-pro/extension-details-summary": "workspace:*",
     "@tiptap/core": "catalog:",
     "@tiptap/extension-blockquote": "catalog:",
     "@tiptap/extension-bold": "catalog:",

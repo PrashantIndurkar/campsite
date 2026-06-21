@@ -1,0 +1,10 @@
+{
+  "name": "@tiptap-pro/extension-details-content",
+  "version": "2.10.11",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+    "@tiptap/core": "catalog:"
+  }
+}
